@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>নওগাঁ আম সাপ্লায়ার্স | নওগাঁ আম ভান্ডার</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tiro+Bangla&display=swap');
+        
+        body {
+            font-family: 'Tiro Bangla', serif;
+            background-color: #fef6e4;
+        }
+        
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1593852444861-600d6667bf2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .mango-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .cart-item {
+            transition: all 0.3s ease;
+        }
+        
+        .cart-item:hover {
+            background-color: #f8f8f8;
+        }
+        
+        .bangla-font {
+            font-family: 'Tiro Bangla', serif;
+        }
+        
+        .text-bangla {
+            font-family: 'Tiro Bangla', serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="bg-amber-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-mango text-3xl text-yellow-300"></i>
+                <h1 class="text-2xl font-bold text-bangla">নওগাঁ আম সাপ্লায়ার্স</h1>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-yellow-200 text-bangla">হোম</a></li>
+                    <li><a href="#products" class="hover:text-yellow-200 text-bangla">পণ্য</a></li>
+                    <li><a href="#about" class="hover:text-yellow-200 text-bangla">আমাদের সম্পর্কে</a></li>
+                    <li>
+                        <button onclick="toggleCart()" class="relative">
+                            <i class="fas fa-shopping-cart text-2xl"></i>
+                            <span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm">0</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg py-20 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-bangla">নওগাঁর সেরা আম এখন আপনার দোরগোড়ায়</h1>
+            <p class="text-xl mb-8 text-bangla">বাংলাদেশের সেরা আমের স্বাদ উপভোগ করুন</p>
+            <a href="#products" class="bg-yellow-400 hover:bg-yellow-500 text-amber-900 font-bold py-3 px-8 rounded-full text-lg transition duration-300 text-bangla">আম কিনুন</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-amber-800 text-bangla">আমাদের আমের সংগ্রহ</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md mango-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" alt="ল্যাংড়া আম" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800 text-bangla">ল্যাংড়া আম</h3>
+                        <p class="text-gray-600 mb-4 text-bangla">মিষ্টি স্বাদের বিখ্যাত ল্যাংড়া আম, সরাসরি নওগাঁ থেকে</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-600">৳ ২০০/কেজি</span>
+                            <button onclick="addToCart('ল্যাংড়া আম', 200, 'https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80')" class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition duration-300 text-bangla">কার্টে যোগ করুন</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md mango-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1593852444861-600d6667bf2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="হিমসাগর আম" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800 text-bangla">হিমসাগর আম</h3>
+                        <p class="text-gray-600 mb-4 text-bangla">সুমিষ্ট ও সুগন্ধিযুক্ত হিমসাগর আমের স্বাদ নিন</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-600">৳ ২৫০/কেজি</span>
+                            <button onclick="addToCart('হিমসাগর আম', 250, 'https://images.unsplash.com/photo-1593852444861-600d6667bf2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')" class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition duration-300 text-bangla">কার্টে যোগ করুন</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md mango-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1599623560574-39d483760a1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="আম্রপালি আম" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800 text-bangla">আম্রপালি আম</h3>
+                        <p class="text-gray-600 mb-4 text-bangla">ফাইবার সমৃদ্ধ ও কম চিনিযুক্ত আম্রপালি আম</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-600">৳ ৩০০/কেজি</span>
+                            <button onclick="addToCart('আম্রপালি আম', 300, 'https://images.unsplash.com/photo-1599623560574-39d483760a1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')" class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition duration-300 text-bangla">কার্টে যোগ করুন</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md mango-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1603569283847-aa6a0c0c9c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="আমের জুস" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800 text-bangla">আমের জুস</h3>
+                        <p class="text-gray-600 mb-4 text-bangla">প্রাকৃতিক আম থেকে তৈরি তাজা জুস</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-600">৳ ১৫০/বোতল</span>
+                            <button onclick="addToCart('আমের জুস', 150, 'https://images.unsplash.com/photo-1603569283847-aa6a0c0c9c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')" class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition duration-300 text-bangla">কার্টে যোগ করুন</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md mango-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1573246123716-6b1782bfc499?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" alt="আমের জ্যাম" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800 text-bangla">আমের জ্যাম</h3>
+                        <p class="text-gray-600 mb-4 text-bangla">প্রাকৃতিক উপাদানে তৈরি আমের জ্যাম</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-600">৳ ১৮০/জার</span>
+                            <button onclick="addToCart('আমের জ্যাম', 180, 'https://images.unsplash.com/photo-1573246123716-6b1782bfc499?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80')" class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition duration-300 text-bangla">কার্টে যোগ করুন</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-md mango-card transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1603569283847-aa6a0c0c9c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="আমের আচার" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-amber-800 text-bangla">আমের আচার</h3>
+                        <p class="text-gray-600 mb-4 text-bangla">পরিবারের রেসিপিতে তৈরি আমের আচার</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold text-amber-600">৳ ২২০/জার</span>
+                            <button onclick="addToCart('আমের আচার', 220, 'https://images.unsplash.com/photo-1603569283847-aa6a0c0c9c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')" class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition duration-300 text-bangla">কার্টে যোগ করুন</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-amber-800 text-bangla">আমাদের সম্পর্কে</h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1593852444861-600d6667bf2c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="নওগাঁর আম বাগান" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-4 text-amber-700 text-bangla">নওগাঁর আমের ঐতিহ্য</h3>
+                    <p class="text-gray-700 mb-4 text-bangla">নওগাঁ জেলার আম বাংলাদেশে বিখ্যাত তার স্বাদ ও গন্ধের জন্য। আমাদের পরিবার তিন প্রজন্ম ধরে আম চাষ করে আসছে। আমরা প্রাকৃতিক পদ্ধতিতে আম চাষ করি যাতে আপনি পেতে পারেন সবচেয়ে তাজা ও স্বাস্থ্যকর আম।</p>
+                    <p class="text-gray-700 mb-4 text-bangla">আমরা সরাসরি আমাদের বাগান থেকে আপনার দোরগোড়ায় পৌঁছে দিই তাজা আম ও আমজাত পণ্য। আমাদের সকল পণ্য হাইজিনিকভাবে প্রস্তুত ও প্যাকেজিং করা হয়।</p>
+                    <div class="flex items-center mt-6">
+                        <i class="fas fa-phone-alt text-amber-600 mr-3"></i>
+                        <span class="text-gray-700 text-bangla">আমাদের সাথে যোগাযোগ: <strong>০১৭১২-৩৪৫৬৭৮</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cartSidebar" class="fixed top-0 right-0 w-full md:w-96 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-amber-800 text-bangla">আপনার কার্ট</h3>
+                <button onclick="toggleCart()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <div id="cartItems" class="mb-6">
+                <!-- Cart items will be added here dynamically -->
+                <p id="emptyCartMessage" class="text-center text-gray-500 py-8 text-bangla">আপনার কার্টে কোন পণ্য নেই</p>
+            </div>
+            
+            <div class="border-t border-gray-200 pt-4">
+                <div class="flex justify-between mb-2">
+                    <span class="font-medium text-bangla">মোট:</span>
+                    <span id="cartTotal" class="font-bold">৳ ০</span>
+                </div>
+                <button onclick="proceedToCheckout()" id="checkoutBtn" class="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 px-4 rounded-full transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-bangla" disabled>
+                    চেকআউট করুন
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="cartOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden" onclick="toggleCart()"></div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-md mx-4">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-amber-800 text-bangla">অর্ডার সম্পূর্ণ করুন</h3>
+                    <button onclick="closeCheckoutModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                
+                <form id="checkoutForm">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 mb-2 text-bangla">আপনার নাম</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="phone" class="block text-gray-700 mb-2 text-bangla">মোবাইল নম্বর</label>
+                        <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="address" class="block text-gray-700 mb-2 text-bangla">ঠিকানা</label>
+                        <textarea id="address" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500" required></textarea>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="payment" class="block text-gray-700 mb-2 text-bangla">পেমেন্ট পদ্ধতি</label>
+                        <select id="payment" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-bangla">
+                            <option value="cash">ক্যাশ অন ডেলিভারি</option>
+                            <option value="bkash">বিকাশ</option>
+                            <option value="nagad">নগদ</option>
+                            <option value="card">ক্রেডিট/ডেবিট কার্ড</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 px-4 rounded-full transition duration-300 text-bangla">
+                        অর্ডার নিশ্চিত করুন
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div id="confirmationModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-md mx-4">
+            <div class="p-6 text-center">
+                <div class="mb-6">
+                    <i class="fas fa-check-circle text-6xl text-green-500 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2 text-bangla">অর্ডার সফল!</h3>
+                    <p class="text-gray-700 mb-4 text-bangla">আপনার অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে। আমাদের প্রতিনিধি শীঘ্রই আপনার সাথে যোগাযোগ করবে।</p>
+                    <p id="orderDetails" class="text-gray-700 text-left text-sm mb-6 text-bangla"></p>
+                </div>
+                <button onclick="closeConfirmationModal()" class="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 px-4 rounded-full transition duration-300 text-bangla">
+                    ঠিক আছে
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-amber-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-bangla">নওগাঁ আম সাপ্লায়ার্স</h3>
+                    <p class="text-bangla">বাংলাদেশের সেরা আম সরবরাহকারী। সরাসরি বাগান থেকে আপনার দোরগোড়ায়।</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-bangla">যোগাযোগ</h3>
+                    <p class="mb-2 text-bangla"><i class="fas fa-map-marker-alt mr-2"></i> নওগাঁ সদর, নওগাঁ</p>
+                    <p class="mb-2 text-bangla"><i class="fas fa-phone-alt mr-2"></i> ০১৭১২-৩৪৫৬৭৮</p>
+                    <p class="text-bangla"><i class="fas fa-envelope mr-2"></i> info@naogaonamsuppliers.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-bangla">সামাজিক যোগাযোগ</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-yellow-300"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-yellow-300"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl hover:text-yellow-300"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-amber-700 mt-8 pt-6 text-center text-bangla">
+                <p>&copy; ২০২৩ নওগাঁ আম সাপ্লায়ার্স। সকল স্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cart functionality
+        let cart = [];
+        
+        // Toggle cart visibility
+        function toggleCart() {
+            const cartSidebar = document.getElementById('cartSidebar');
+            const cartOverlay = document.getElementById('cartOverlay');
+            
+            if (cartSidebar.classList.contains('translate-x-full')) {
+                cartSidebar.classList.remove('translate-x-full');
+                cartOverlay.classList.remove('hidden');
+            } else {
+                cartSidebar.classList.add('translate-x-full');
+                cartOverlay.classList.add('hidden');
+            }
+        }
+        
+        // Add item to cart
+        function addToCart(name, price, image) {
+            // Check if item already exists in cart
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+            }
+            
+            updateCart();
+            showAddedToCartToast(name);
+        }
+        
+        // Remove item from cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+        
+        // Update quantity of item in cart
+        function updateQuantity(index, change) {
+            const newQuantity = cart[index].quantity + change;
+            
+            if (newQuantity < 1) {
+                removeFromCart(index);
+            } else {
+                cart[index].quantity = newQuantity;
+            }
+            
+            updateCart();
+        }
+        
+        // Update cart UI
+        function updateCart() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            const emptyCartMessage = document.getElementById('emptyCartMessage');
+            
+            // Clear cart items
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                emptyCartMessage.classList.remove('hidden');
+                checkoutBtn.disabled = true;
+            } else {
+                emptyCartMessage.classList.add('hidden');
+                checkoutBtn.disabled = false;
+                
+                // Add items to cart
+                let total = 0;
+                
+                cart.forEach((item, index) => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'flex items-center py-4 border-b border-gray-200 cart-item';
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-md">
+                        <div class="ml-4 flex-1">
+                            <h4 class="font-medium text-bangla">${item.name}</h4>
+                            <div class="flex items-center mt-1">
+                                <button onclick="updateQuantity(${index}, -1)" class="text-gray-500 hover:text-amber-600">
+                                    <i class="fas fa-minus text-sm"></i>
+                                </button>
+                                <span class="mx-2">${item.quantity}</span>
+                                <button onclick="updateQuantity(${index}, 1)" class="text-gray-500 hover:text-amber-600">
+                                    <i class="fas fa-plus text-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="font-medium">৳ ${itemTotal}</span>
+                            <button onclick="removeFromCart(${index})" class="block mt-1 text-red-500 hover:text-red-700 text-sm text-bangla">
+                                <i class="fas fa-trash-alt mr-1"></i> অপসারণ
+                            </button>
+                        </div>
+                    `;
+                    
+                    cartItemsContainer.appendChild(cartItem);
+                });
+                
+                cartTotal.textContent = `৳ ${total}`;
+            }
+            
+            // Update cart count
+            const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = itemCount;
+            
+            // Save cart to localStorage
+            localStorage.setItem('naogaonMangoCart', JSON.stringify(cart));
+        }
+        
+        // Proceed to checkout
+        function proceedToCheckout() {
+            toggleCart();
+            document.getElementById('checkoutModal').classList.remove('hidden');
+        }
+        
+        // Close checkout modal
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.add('hidden');
+        }
+        
+        // Close confirmation modal
+        function closeConfirmationModal() {
+            document.getElementById('confirmationModal').classList.add('hidden');
+            // Clear cart after successful order
+            cart = [];
+            updateCart();
+        }
+        
+        // Show added to cart toast
+        function showAddedToCartToast(itemName) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg flex items-center';
+            toast.innerHTML = `
+                <i class="fas fa-check-circle mr-2"></i>
+                <span class="text-bangla">${itemName} কার্টে যোগ করা হয়েছে</span>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+        
+        // Form submission
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const payment = document.getElementById('payment').value;
+            
+            // Prepare order details
+            let orderDetails = `
+                <p><strong>নাম:</strong> ${name}</p>
+                <p><strong>মোবাইল:</strong> ${phone}</p>
+                <p><strong>ঠিকানা:</strong> ${address}</p>
+                <p><strong>পেমেন্ট:</strong> ${document.getElementById('payment').options[document.getElementById('payment').selectedIndex].text}</p>
+                <div class="mt-4 border-t pt-3">
+                    <p class="font-bold mb-2">অর্ডার বিবরণ:</p>
+            `;
+            
+            cart.forEach(item => {
+                orderDetails += `<p>${item.name} - ${item.quantity} x ৳${item.price} = ৳${item.price * item.quantity}</p>`;
+            });
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            orderDetails += `<p class="font-bold mt-2">মোট: ৳${total}</p></div>`;
+            
+            document.getElementById('orderDetails').innerHTML = orderDetails;
+            
+            // Close checkout modal and show confirmation
+            closeCheckoutModal();
+            document.getElementById('confirmationModal').classList.remove('hidden');
+        });
+        
+        // Load cart from localStorage when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedCart = localStorage.getItem('naogaonMangoCart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+                updateCart();
+            }
+        });
+    </script>
+</body>
+</html>
